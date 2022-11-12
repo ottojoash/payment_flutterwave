@@ -36,3 +36,8 @@ class _HomePageState extends State<Homepage> {
   }
 }
 
+@override
+void initState() {
+  setRef();
+  super.initState();
+}
