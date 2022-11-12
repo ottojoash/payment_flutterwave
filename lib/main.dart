@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -23,6 +24,15 @@ class _HomePageState extends State<Homepage> {
     Random rand = Random();
     int number = rand.nextInt(2000);
 
-    
+    if (Platform.isAndroid) {
+      setState(() {
+        _ref = "AndriodRef1789$number";
+      });
+    } else {
+      setState(() {
+        _ref = "IOSRef1789$number";
+      });
+    }
   }
 }
+
