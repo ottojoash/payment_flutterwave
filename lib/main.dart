@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,5 +16,13 @@ class App extends StatelessWidget {
 class _HomePageState extends State<Homepage> {
   TextEditingController _email = TextEditingController();
   TextEditingController _amount = TextEditingController();
-  
+
+  String? _ref;
+
+  void setRef() {
+    Random rand = Random();
+    int number = rand.nextInt(2000);
+
+    
+  }
 }
