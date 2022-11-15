@@ -43,4 +43,8 @@ void initState() {
 }
 
 @override 
-Widget build
+Widget build(BuildContext context){
+  return Scaffold(
+    appBar: AppBar(title: Text("Flutter WAve Appplication")),
+  )
+}
