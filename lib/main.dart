@@ -52,10 +52,21 @@ Widget build(BuildContext context){
           bottom: 10),
           child: TextFormField(
             controller: _email,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: "Email"),
             ),
           ),
+          Container(
+            margin: const EdgeInsets.only(
+              bottom: 10),
+              child: TextFormField(
+                controller: _amount,
+                decoration: InputDecoration(
+                  labelText: "Amount"),
+                ),
+              ),
+            ),
+          )
         ),
       )
     ]),
