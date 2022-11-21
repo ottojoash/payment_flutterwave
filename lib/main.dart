@@ -61,10 +61,11 @@ Widget build(BuildContext context){
               bottom: 10),
               child: TextFormField(
                 controller: _amount,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Amount"),
                 ),
               ),
+    
             ),
           )
         ),
