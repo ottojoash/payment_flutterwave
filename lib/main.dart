@@ -46,5 +46,18 @@ void initState() {
 Widget build(BuildContext context){
   return Scaffold(
     appBar: AppBar(title: Text("Flutter WAve Appplication")),
+    body: Stack(children: [
+      Container(
+        margin: const EdgeInsets.only(
+          bottom: 10),
+          child: TextFormField(
+            controller: _email,
+            decoration: InputDecoration(
+              labelText: "Email"),
+            ),
+          ),
+        ),
+      )
+    ]),
   )
 }
