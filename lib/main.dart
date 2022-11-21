@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, avoid_print
+
 import 'dart:io';
 import 'dart:math';
 
@@ -7,7 +9,7 @@ import 'package:flutterwave/flutterwave.dart';
 import 'package:flutterwave/models/responses/charge_response.dart';
 
 void main() {
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
@@ -15,7 +17,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HomePage(),
     );
   }
@@ -29,8 +31,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  TextEditingController _email = TextEditingController();
-  TextEditingController _amount = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _amount = TextEditingController();
 
   String? _ref;
 
@@ -58,7 +60,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Flutter Wave Application")),
+      appBar: AppBar(title: const Text("Flutter Wave Application")),
       body: Stack(
         children: [
           Padding(
@@ -69,14 +71,14 @@ class _HomePageState extends State<HomePage> {
                   margin: const EdgeInsets.only(bottom: 10),
                   child: TextFormField(
                     controller: _email,
-                    decoration: InputDecoration(labelText: "Email"),
+                    decoration: const InputDecoration(labelText: "Email"),
                   ),
                 ),
                 Container(
                   margin: const EdgeInsets.only(bottom: 10),
                   child: TextFormField(
                     controller: _amount,
-                    decoration: InputDecoration(labelText: "Amount"),
+                    decoration: const InputDecoration(labelText: "Amount"),
                   ),
                 ),
               ],
@@ -93,7 +95,7 @@ class _HomePageState extends State<HomePage> {
 
                 if (email.isEmpty || amount.isEmpty) {
                   ScaffoldMessenger.of(context)
-                      .showSnackBar(SnackBar(content: Text("Field are empty")));
+                      .showSnackBar(const SnackBar(content: Text("Field are empty")));
                 } else {
                   ///Flutterwave Payment
                   _makePayment(context, email.trim(), amount.trim());
@@ -105,11 +107,12 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.lightBlue,
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // ignore: prefer_const_literals_to_create_immutables
                     children: [
                       ///Icon
-                      Icon(Icons.payment),
+                      const Icon(Icons.payment),
 
-                      Text(
+                      const Text(
                         "Make Payment",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
@@ -131,7 +134,7 @@ class _HomePageState extends State<HomePage> {
           publicKey: "FLWPUBK_TEST-54552883a8ee8066d4b7c498bc3dd687-X",
           currency: "UGX",
           amount: amount,
-          email: "$email",
+          email: email,
           fullName: "Otto J",
           txRef: _ref!,
           isDebugMode: true,
@@ -149,6 +152,7 @@ class _HomePageState extends State<HomePage> {
       final ChargeResponse response =
           await flutterwave.initializeForUiPayments();
 
+      // ignore: unnecessary_null_comparison
       if (response == null) {
         // ignore: avoid_print
         print("Transaction Failed");
