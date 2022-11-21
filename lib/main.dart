@@ -127,11 +127,11 @@ class _HomePageState extends State<HomePage> {
     try {
       Flutterwave flutterwave = Flutterwave.forUIPayment(
           context: this.context,
-          encryptionKey: "FLWSECK_TEST4734027149f5",
-          publicKey: "FLWPUBK_TEST-e8d4cd5462fb381c4163ba7f7f746a98-X",
+          encryptionKey: "FLWSECK_TEST0df4ecb58781",
+          publicKey: "FLWPUBK_TEST-54552883a8ee8066d4b7c498bc3dd687-X",
           currency: "UGX",
           amount: amount,
-          email: email,
+          email: "$email",
           fullName: "Otto J",
           txRef: _ref!,
           isDebugMode: true,
