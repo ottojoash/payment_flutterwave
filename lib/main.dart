@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutterwave/flutterwave.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutterwave/models/responses/charge_response.dart';
 
 void main() {
