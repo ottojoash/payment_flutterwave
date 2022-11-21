@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
           currency: "NGN",
           amount: amount,
           email: "$email",
-          fullName: "Destiny Ed",
+          fullName: "Otto J",
           txRef: _ref!,
           isDebugMode: true,
           phoneNumber: "0123456789",
