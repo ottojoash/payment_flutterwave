@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
           context: this.context,
           encryptionKey: "FLWSECK_TEST4734027149f5",
           publicKey: "FLWPUBK_TEST-e8d4cd5462fb381c4163ba7f7f746a98-X",
-          currency: "NGN",
+          currency: "UGX",
           amount: amount,
           email: "$email",
           fullName: "Otto J",
@@ -143,13 +143,14 @@ class _HomePageState extends State<HomePage> {
           acceptGhanaPayment: false,
           acceptMpesaPayment: true,
           acceptRwandaMoneyPayment: false,
-          acceptUgandaPayment: false,
+          acceptUgandaPayment: true,
           acceptZambiaPayment: false);
 
       final ChargeResponse response =
           await flutterwave.initializeForUiPayments();
 
       if (response == null) {
+        // ignore: avoid_print
         print("Transaction Failed");
       } else {
         ///
