@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
           publicKey: "FLWPUBK_TEST-e8d4cd5462fb381c4163ba7f7f746a98-X",
           currency: "UGX",
           amount: amount,
-          email: "$email",
+          email: email,
           fullName: "Otto J",
           txRef: _ref!,
           isDebugMode: true,
